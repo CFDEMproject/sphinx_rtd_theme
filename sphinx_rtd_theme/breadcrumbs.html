@@ -22,10 +22,22 @@
         {% elif show_source and source_url_prefix %}
           <a href="{{ source_url_prefix }}{{ pagename }}{{ suffix }}">View page source</a>
         {% elif show_source and has_source and sourcename %}
-          <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow"> View page source</a>
+          <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow"> View page source</a> 
+          <a href="http://www.cfdem.com"> Website</a> 
+          <a href="{{ pathto('Section_commands.html#comm', true)|e }}" rel="nofollow"> Commands</a>
         {% endif %}
       {% endif %}
     </li>
   </ul>
   <hr/>
+  {% if next or prev %}
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      {% if next %}
+        <a href="{{ next.link|e }}" class="btn btn-neutral float-right" title="{{ next.title|striptags|e }}" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      {% endif %}
+      {% if prev %}
+        <a href="{{ prev.link|e }}" class="btn btn-neutral" title="{{ prev.title|striptags|e }}" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      {% endif %}
+    </div>
+  {% endif %}
 </div>
