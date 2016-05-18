@@ -23,9 +23,9 @@
           <a href="{{ source_url_prefix }}{{ pagename }}{{ suffix }}">View page source</a>
         {% elif show_source and has_source and sourcename %}
           <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow"> View page source</a> 
+        {% endif %}
           <a href="http://www.cfdem.com"> Website</a> 
           <a href="{{ pathto('Section_commands.html#comm', true)|e }}" rel="nofollow"> Commands</a>
-        {% endif %}
       {% endif %}
     </li>
   </ul>
