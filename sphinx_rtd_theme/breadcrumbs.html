@@ -24,8 +24,11 @@
         {% elif show_source and has_source and sourcename %}
           <a href="{{ pathto('_sources/' + sourcename, true)|e }}" rel="nofollow"> View page source</a> 
         {% endif %}
-          <a href="http://www.cfdem.com"> Website</a> 
+          <a href="http://www.cfdem.com"> Website</a>
+        {% if show_source and has_source and sourcename %}
           <a href="{{ pathto('Section_commands.html#comm', true)|e }}" rel="nofollow"> Commands</a>
+          {# Allows to disable the Commands link for CFDEMcoupling #}
+        {% endif %}
       {% endif %}
     </li>
   </ul>
